@@ -1,0 +1,76 @@
+$backwidth: 500px;
+$backheight: 500px;
+$backgroundUrl: 'http://sandbox.runjs.cn/uploads/rs/475/ao7egt7f/bg.png';
+$leaveWidth: 25px;
+$leaveHeight: 20px;
+
+#content{
+	width: $backwidth;
+	height: $backheight;
+	background: url($backgroundUrl) no-repeat top right;
+	position: relative;
+	overflow: hidden;
+}
+
+.leaf {
+	position: absolute;
+	width: $leaveWidth;
+	height: $leaveHeight;
+	animation-iteration-count: infinite, infinite; // 可同时设置两个动画
+	animation-direction: normal, normal;
+	animation-timing-function: linear, ease-in;
+}
+
+.leaf > img {
+	position: absolute;
+	width: $leaveWidth;
+	height: $leaveHeight;
+	animation-iteration-count: infinite; // 动画应该播放的次数
+	animation-direction: alternate; // 是否应该轮流反向播放动画
+	animation-timing-function: ease-in-out; // 动画的速度曲线
+	transform-origin: 50% -100%; // 旋转元素的基点位置
+}
+
+@keyframes fade {
+	0% {
+		opacity: 1
+	}
+
+	95% {
+		opacity: 1
+	}
+
+	100% {
+		opacity: 0
+	}
+}
+
+@keyframes drop {
+	0% {
+		transform: translate(30px,-50px)
+	}
+
+	100% {
+		transform: translate(-200px,650px)
+	}
+}
+
+@keyframes imgRotate {
+	0% {
+		transform: rotate(-50deg)
+	}
+
+	100% {
+		transform: rotate(50deg)
+	}
+}
+
+@keyframes spinImgRotate {
+	0% {
+		transform: scale(-1, 1) rotate(50deg)
+	}
+
+	100% {
+		transform: scale(-1, 1) rotate(-50deg)
+	}
+}
